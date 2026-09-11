@@ -1,16 +1,3 @@
-"""
-AI + Cybersecurity
-Network Intrusion Detection using Machine Learning
-
-Educational project:
-- Generates a small synthetic network-traffic dataset
-- Trains a Random Forest classifier
-- Evaluates the model
-- Allows the user to test new network traffic
-
-Run:
-    python main.py
-"""
 
 import random
 from typing import List
@@ -19,11 +6,6 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
-
-
-# ---------------------------------------------------------
-# 1. Generate synthetic network traffic
-# ---------------------------------------------------------
 
 def generate_dataset(samples: int = 1000):
     """
@@ -78,9 +60,7 @@ def generate_dataset(samples: int = 1000):
     return np.array(data), np.array(labels)
 
 
-# ---------------------------------------------------------
-# 2. Train the machine-learning model
-# ---------------------------------------------------------
+
 
 def train_model():
     """Generate data, train the classifier and evaluate it."""
@@ -123,11 +103,6 @@ def train_model():
 
     return model
 
-
-# ---------------------------------------------------------
-# 3. Analyze network traffic
-# ---------------------------------------------------------
-
 def analyze_traffic(model, traffic):
     """
     Analyze one network-traffic record.
@@ -161,11 +136,6 @@ def analyze_traffic(model, traffic):
     print(f"Model confidence: {confidence:.2f}%")
 
     return prediction
-
-
-# ---------------------------------------------------------
-# 4. Get traffic information from the user
-# ---------------------------------------------------------
 
 def get_user_traffic():
     """Read network-traffic information from the terminal."""
@@ -210,11 +180,6 @@ def get_user_traffic():
     except ValueError:
         print("\n❌ Invalid input. Please enter numbers only.")
         return None
-
-
-# ---------------------------------------------------------
-# 5. Main program
-# ---------------------------------------------------------
 
 def main():
     """Run the cybersecurity detection system."""
@@ -270,11 +235,6 @@ def main():
 
         else:
             print("\n❌ Invalid option. Choose 1-4.")
-
-
-# ---------------------------------------------------------
-# Program entry point
-# ---------------------------------------------------------
 
 if __name__ == "__main__":
     main()
